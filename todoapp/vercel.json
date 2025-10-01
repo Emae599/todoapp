@@ -11,22 +11,12 @@
       "dest": "/public/$1/$2"
     },
     {
-      "src": "/(favicon.ico|robots.txt)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/public/(.*)",
+      "src": "/(.*\\.(ico|txt|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
       "dest": "/public/$1"
     },
     {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
-  ],
-  "env": {
-    "APP_ENV": "production",
-    "APP_DEBUG": "false",
-    "LOG_CHANNEL": "stderr",
-    "SESSION_DRIVER": "cookie"
-  }
+  ]
 }
