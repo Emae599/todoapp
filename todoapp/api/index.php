@@ -1,17 +1,24 @@
 <?php
 
-// Load Laravel's autoloader
+// Serverless front controller for Laravel on Vercel
+
+declare(strict_types=1);
+
+// Work from project root
+chdir(dirname(__DIR__));
+
 require __DIR__ . '/../vendor/autoload.php';
 
-// Bootstrap Laravel and handle the request
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
+$request = Illuminate\Http\Request::capture();
+
+$response = $kernel->handle($request);
 
 $response->send();
 
 $kernel->terminate($request, $response);
+
+
