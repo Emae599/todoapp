@@ -1,14 +1,12 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/index.php", "use": "@vercel/php" }
+    { "src": "todoapp/api/index.php", "use": "@vercel/php" }
   ],
   "routes": [
-    { "src": "/(css|js|images|fonts)/(.*)", "dest": "/public/$1/$2" },
-    { "src": "/(favicon.ico|robots.txt)", "dest": "/public/$1" },
-    { "src": "/public/(.*)", "dest": "/public/$1" },
-    { "src": "/(.*)", "dest": "/api/index.php" }
+    { "src": "/(css|js|images|fonts)/(.*)", "dest": "/todoapp/public/$1/$2" },
+    { "src": "/(favicon.ico|robots.txt)", "dest": "/todoapp/public/$1" },
+    { "src": "/public/(.*)", "dest": "/todoapp/public/$1" },
+    { "src": "/(.*)", "dest": "/todoapp/api/index.php" }
   ]
 }
-
-
